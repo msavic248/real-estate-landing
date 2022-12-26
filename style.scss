@@ -17,16 +17,14 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #4F5361;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #0F1B4C;
 }
 
 body {
-  margin: 0;
-  display: flex;
   min-width: 320px;
 }
 
@@ -38,11 +36,11 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.8em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #0F1B4C;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -54,11 +52,64 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+button.transparent {
+  background-color: transparent;
+  color: #0F1B4C;
+}
+
+
 .header {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  background-color: #E6F0FF;
 }
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+  padding-top: 3rem;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline;
+      padding: 0.5rem;
+    }
+  }
+}
+
+.hero {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding-top: 3rem;
+}
+
+.hero__copy {
+  padding-top: 3rem;
+  padding-left: 3rem;
+
+  h1 {
+    color: #000336;
+    font-weight: 700;
+    font-size: 4rem;
+  }
+
+  p {
+    color: #687690;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  button {
+    margin-top: 2rem;
+  }
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {

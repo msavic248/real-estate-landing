@@ -1,5 +1,4 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
+import './style.scss'
 
 document.querySelector('#app').innerHTML = `
   
