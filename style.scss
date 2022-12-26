@@ -6,7 +6,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -26,6 +26,8 @@ a:hover {
 
 body {
   min-width: 320px;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -59,14 +61,16 @@ button.transparent {
 
 
 .header {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   background-color: #E6F0FF;
 }
 
 nav {
+  max-width: 1440px;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: baseline;
   padding-top: 3rem;
 
@@ -84,8 +88,7 @@ nav {
 
 .hero {
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  justify-content: space-around;
   padding-top: 3rem;
 }
 
@@ -110,6 +113,30 @@ nav {
   }
 }
 
+.reviews {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-top: 5rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  display: flex;
+  justify-content: space-between;
+ 
+  p {
+    color: #7D8589;
+  }
+
+  .ratings {
+    justify-self: end;
+  }
+  
+}
+
+.logos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+}
 
 @media (prefers-color-scheme: light) {
   :root {
