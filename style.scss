@@ -103,6 +103,14 @@
        url('/fonts/poppins-v20-latin-700italic.svg#Poppins') format('svg'); /* Legacy iOS */
 }
 
+html,body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
 :root {
   font-family: 'Poppins', Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -191,6 +199,10 @@ nav {
   }
 }
 
+.hamburger-menu {
+  display: none;
+}
+
 .hero {
   display: flex;
   justify-content: space-around;
@@ -220,26 +232,29 @@ nav {
   }
 }
 
+.house-illustration {
+  align-self: end;
+}
+
 .reviews {
-  max-width: 1280px;
+  max-width: 1240px;
   margin: 0 auto;
   padding-top: 5rem;
-  padding-left: 10rem;
-  padding-right: 10rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
   display: flex;
   justify-content: space-between;
  
   p {
     color: #7D8589;
-  }
+  } 
+}
 
-  .ratings {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: end;
-  }
-  
+.ratings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
 }
 
 .logos {
@@ -293,6 +308,7 @@ nav {
     color: #000339;
     font-size: 2rem;
     font-weight: 600;
+    line-height: 35px;
   }
 
   p {
@@ -361,10 +377,12 @@ nav {
 }
 
 .neighbourhood {
+  max-width: 1440px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
-  gap: 5rem;
+  gap: 16rem;
   padding-top: 5rem;
 
   h2 {
@@ -436,7 +454,13 @@ nav {
   padding-top: 8rem;
 }
 
+.hidden-pc {
+  display: none;
+}
+
 .stats {
+  max-width: 1280px;
+  margin: 0 auto;
   position: relative;
   display: flex;
   justify-content: space-evenly;
@@ -457,7 +481,7 @@ nav {
 
 .banner {
   position: relative;
-  max-width: 1280px;
+  max-width: 1240px;
   height: 460px;
   background-color: #063183;
   margin: 0 auto;
@@ -475,15 +499,21 @@ nav {
     z-index: 2;
   }
 
+  h1 {
+    color: #ffffff;
+    line-height: 35px;
+  }
+
   p {
+    color: #ffffff;
     opacity: 75%;
   }
 
   button {
     background-color: #ffffff;
     color: #002366;
-
   }
+
   img {
     position: absolute;
     bottom: 0;
@@ -494,7 +524,7 @@ nav {
 }
 
 .footer {
-  max-width: 1280px;
+  max-width: 1240px;
   margin: 0 auto;
   margin-top: 8rem;
   padding-left: 0.75rem;
@@ -570,5 +600,533 @@ nav {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .hero__copy {
+    padding-left: 1rem;
+
+    h1 {
+      font-size: 3rem;
+    }
+  }
+
+  .house-illustration {
+    width: 496.4px;
+    height: 526.15px;
+  }
+
+  .reviews {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .logos {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 0.2rem;
+  }
+
+  .sanfran {
+    width: 240px;
+  }
+
+  .neighbourhood__info {
+    padding-right: 1rem;
+  }
+
+  .banner {
+    height: 380px;
+
+    img {
+      right: -100px;
+    }
+  }
+}
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  nav {
+    justify-content: space-between;
+    align-items: start;
+    padding-left: 2rem;
+    padding-right: 3rem;
+
+    > div:last-child {
+      display: none;
+    }
+
+    ul {
+      display: none;
+    }
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  #menu__toggle {
+    opacity: 0;
+  }
+
+  #menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+  }
+
+  #menu__toggle:checked + .menu__btn > span::before {
+    top: 0px;
+    transform: rotate(0deg);
+  }
+
+  #menu__toggle:checked + .menu__btn > span::after {
+    top: -3px;
+    transform: rotate(90deg);
+  }
+
+  #menu__toggle:checked ~ .menu__box {
+    left: 0 !important;
+  }
+
+  .menu__btn {
+    position: relative;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: relative;
+    top: -15px;
+    width: 100%;
+    height: 3px;
+    background-color: #000336;
+    transition-duration: .25s;
+  }
+
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+
+  .menu__btn > span::after {
+    content: '';
+    top: 6px;
+  }
+
+  .menu__box {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: #E6F0FF;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    transition-duration: .25s;
+    z-index: 3;
+  }
+
+  .menu__image {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+  }
+
+  .menu__item {
+    display: block;
+    padding: 1rem 3rem;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition-duration: .25s;
+  }
+
+  .menu__item:hover {
+    background-color: #CFD8DC;
+  }
+
+  .hero {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .hero__copy {
+    padding-left: 0;
+
+    h1 {
+      font-size: 3rem;
+    }
+  }
+
+  .house-illustration {
+    width: 496.4px;
+    height: 526.15px;
+  }
+
+  .reviews {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  .logos {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 150px 150px 150px;
+  }
+
+  .guides__flex {
+    gap: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .guides {
+    button {
+      margin-bottom: 6rem;
+    }
+  }
+
+  .featured__info {
+    flex-wrap: wrap;
+  }
+
+  .featured__flex {
+    flex-wrap: wrap;
+  }
+
+  .neighbourhood {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 12rem;
+    padding-top: 2rem;
+  }
+
+  .sanfran {
+    width: 620px;
+
+    > div {
+      width: 200px;
+      left: 1.2rem;
+    }
+  }
+
+  .sanfran__users {
+    max-width: 200px;
+  }
+
+  .sanfran__house {
+    transform: scale(0.8);
+    left: -1.2rem;
+  }
+
+  .neighbourhood__info {
+    padding-right: 10rem;
+  }
+
+  .stats {
+    margin-top: 8rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px 150px 150px;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .banner {
+    height: 270px;
+
+    > div {
+      padding-left: 1rem;
+    }
+
+    img {
+      right: -100px;
+    }
+  }
+
+  .footer__options, .footer__copyright {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 550px) {
+
+  .footer {
+    margin-top: 4rem;
+  }
+
+  .banner {
+    img {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  
+  nav {
+    justify-content: space-between;
+    align-items: start;
+    padding-left: 2rem;
+    padding-right: 3rem;
+
+    > div {
+      display: none;
+    }
+
+    ul {
+      display: none;
+    }
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  #menu__toggle {
+    opacity: 0;
+  }
+
+  #menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+  }
+
+  #menu__toggle:checked + .menu__btn > span::before {
+    top: 0px;
+    transform: rotate(0deg);
+  }
+
+  #menu__toggle:checked + .menu__btn > span::after {
+    top: -3px;
+    transform: rotate(90deg);
+  }
+
+  #menu__toggle:checked ~ .menu__box {
+    left: 0 !important;
+  }
+
+  .menu__btn {
+    position: relative;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: relative;
+    top: -15px;
+    width: 100%;
+    height: 3px;
+    background-color: #000336;
+    transition-duration: .25s;
+  }
+
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+
+  .menu__btn > span::after {
+    content: '';
+    top: 6px;
+  }
+
+  .menu__box {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: #E6F0FF;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    transition-duration: .25s;
+    z-index: 3;
+  }
+
+  .menu__image {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+  }
+
+  .menu__item {
+    display: block;
+    padding: 1rem 3rem;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition-duration: .25s;
+  }
+
+  .menu__item:hover {
+    background-color: #CFD8DC;
+  }
+
+  .hero {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .hero__copy {
+    padding-left: 0;
+
+    h1 {
+      font-size: 3rem;
+    }
+  }
+
+  .house-illustration {
+    width: 292px;
+    height: 309.5px;
+  }
+
+  .reviews {
+    padding-left: 0rem;
+    padding-right: 0rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+
+    > div {
+      text-align: center;
+    }
+  }
+
+  .ratings {
+    align-items: center;
+  }
+
+  .logos {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 100px 100px 100px 100px;
+  }
+
+  .guides__flex {
+    gap: 4rem;
+    padding-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 100px 100px;
+  }
+
+  .guides {
+
+    button {
+      margin-bottom: 6rem;
+    }
+  }
+
+  .featured__info {
+    flex-wrap: wrap;
+  }
+
+  .featured__flex {
+    flex-wrap: wrap;
+  }
+
+  .neighbourhood {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 10rem;
+    padding-top: 2rem;
+  }
+
+  .sanfran {
+    width: 560px;
+
+    > div {
+      width: 160px;
+      left: 0rem;
+    }
+  }
+
+  .sanfran__users {
+    max-width: 180px;
+  }
+
+  .sanfran__house {
+    transform: scale(0.6);
+    left: -7.2rem;
+  }
+
+  .neighbourhood__info {
+    padding-right: 10rem;
+  }
+
+  .stats {
+    margin-top: 8rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px 150px 150px;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .banner {
+    height: 270px;
+
+    > div {
+      padding-left: 0.5rem;
+    }
+
+    img {
+      right: -100px;
+    }
+  }
+
+  .footer {
+    margin-top: 4rem;
+  }
+
+  .footer__options {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .footer__contact {
+
+    > div {
+      justify-content: center;
+      padding-top: 1rem;
+    }
+  }
+  .footer__copyright {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 370px) {
+
+  .sanfran__house {
+    transform: scale(0.55);
+    left: -8.2rem;
+  }
+
+  .hidden-pc {
+    display: block;
   }
 }
